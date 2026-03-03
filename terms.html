@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>利用規約｜Route Compare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F7F9FC;
+      --surface: #FFFFFF;
+      --border: #E5E9F0;
+      --text-primary: #111827;
+      --text-secondary: #6B7280;
+      --accent: #2563EB;
+      --accent-green: #10B981;
+      --accent-light: #EFF6FF;
+      --mono: 'DM Mono', monospace;
+      --sans: 'Noto Sans JP', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 20px;
+      color: var(--accent);
+      letter-spacing: -0.5px;
+    }
+
+    .logo span { color: var(--accent-green); }
+
+    .header-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-left: 1px solid var(--border);
+      padding-left: 12px;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--text-primary);
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .page-meta {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      font-family: var(--mono);
+    }
+
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 16px;
+    }
+
+    section h2 {
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    section h2::before {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    section p {
+      color: var(--text-primary);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    section p + p { margin-top: 12px; }
+
+    .info-list {
+      list-style: none;
+      margin-top: 8px;
+    }
+
+    .info-list li {
+      font-size: 14px;
+      color: var(--text-primary);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .info-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .info-list li::before {
+      content: '–';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .plan-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 13px;
+    }
+
+    .plan-table th {
+      background: #F9FAFB;
+      color: var(--text-secondary);
+      font-weight: 700;
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .plan-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .plan-table tr:last-child td { border-bottom: none; }
+
+    .plan-label {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .plan-pro { color: var(--accent); }
+
+    .contact-box {
+      background: var(--accent-light);
+      border: 1px solid #BFDBFE;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-top: 12px;
+    }
+
+    .contact-box p { font-size: 13px; color: var(--accent); }
+
+    .contact-email {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--accent);
+      display: block;
+      margin-top: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-family: var(--mono);
+    }
+
+    @media (max-width: 600px) {
+      main { padding: 32px 16px 60px; }
+      section { padding: 20px; }
+      .page-title { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">√<span>√</span></div>
+    <div class="header-label">Route Compare</div>
+  </div>
+</header>
+
+<main>
+  <h1 class="page-title">利用規約</h1>
+  <p class="page-meta">最終更新日：2026-02-21</p>
+
+  <section>
+    <h2>はじめに</h2>
+    <p>本利用規約（以下「本規約」）は、Route Compare（以下「当方」）が提供するアプリ「Route Compare」（以下「本アプリ」）の利用条件を定めるものです。本アプリをご利用いただくことで、本規約に同意したものとみなします。</p>
+  </section>
+
+  <section>
+    <h2>利用資格</h2>
+    <p>本アプリは13歳以上の方を対象としています。13歳未満の方は本アプリを利用できません。未成年者が本アプリを利用する場合は、親権者または法定代理人の同意を得た上で利用するものとします。ユーザーは本アプリの利用にあたり、適用される各国・地域の法令を遵守するものとします。</p>
+  </section>
+
+  <section>
+    <h2>プランと料金</h2>
+    <p>本アプリは無料プランと有料プラン（Pro）を提供しています。</p>
+    <table class="plan-table">
+      <thead>
+        <tr>
+          <th>プラン</th>
+          <th>ルート比較</th>
+          <th>GPX読み込み</th>
+          <th>料金</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="plan-label">無料</span></td>
+          <td>最大2ルート</td>
+          <td>月10件まで</td>
+          <td>無料</td>
+        </tr>
+        <tr>
+          <td><span class="plan-label plan-pro">Pro</span></td>
+          <td>最大5ルート</td>
+          <td>無制限</td>
+          <td>月額240円 / 年額1,980円</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px; font-size:13px; color:var(--text-secondary);">料金はApp Store / Google Playの表示価格に従います。価格は予告なく変更される場合があります。</p>
+  </section>
+
+  <section>
+    <h2>課金・返金</h2>
+    <ul class="info-list">
+      <li>課金はApp Store（Apple）またはGoogle Play（Google）を通じて処理されます。</li>
+      <li>サブスクリプションは期間終了の24時間前までにキャンセルしない限り、自動的に更新されます。</li>
+      <li>返金はApp Store / Google Playの返金ポリシーに従います。当方への直接の返金対応は行いません。</li>
+      <li>無料トライアルが提供される場合、トライアル期間終了後に課金が開始されます。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>禁止事項</h2>
+    <p>以下の行為を禁止します。</p>
+    <ul class="info-list">
+      <li>本アプリのリバースエンジニアリング、逆コンパイル、改ざん</li>
+      <li>本アプリを商業目的で無断使用・再配布すること</li>
+      <li>他のユーザーや第三者を害する目的での利用</li>
+      <li>法令または公序良俗に違反する行為</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>免責事項</h2>
+    <p>本アプリが提供する勾配・標高・距離データはGPXファイルに基づく参考情報です。実際の登山においては、公式の地図や現地の状況を必ず確認してください。</p>
+    <p>当方は、本アプリの利用によって生じた損害（登山中の事故・怪我・遭難等を含む）について、一切の責任を負いません。</p>
+  </section>
+
+  <section>
+    <h2>知的財産権</h2>
+    <p>本アプリのデザイン・コード・ロゴ等の著作権はRoute Compareに帰属します。ユーザーが読み込んだGPXファイルの著作権はユーザー本人または各サービス提供者に帰属し、当方は何ら権利を主張しません。</p>
+  </section>
+
+  <section>
+    <h2>規約の変更</h2>
+    <p>当方は本規約を必要に応じて変更できるものとします。重要な変更がある場合はアプリ内またはこのページにてお知らせします。変更後も継続して本アプリをご利用いただくことで、変更後の規約に同意したものとみなします。</p>
+  </section>
+
+  <section>
+    <h2>準拠法・管轄</h2>
+    <p>本規約は日本法に準拠します。本アプリに関する紛争については、当方の所在地を管轄する裁判所を第一審の専属的合意管轄裁判所とします。</p>
+  </section>
+
+  <section>
+    <h2>お問い合わせ</h2>
+    <p>本規約に関するご質問は、以下までお問い合わせください。</p>
+    <div class="contact-box">
+      <p>開発者：Route Compare</p>
+      <span class="contact-email">［メールアドレスをここに記載］</span>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Route Compare. All rights reserved.
+</footer>
+
+</body>
+</html>
